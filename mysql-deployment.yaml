@@ -29,17 +29,27 @@ spec:
         name: mysql
         args:
         - "--ignore-db-dir=lost+found"
-        env:
-          # Use secret in real usage
-        - name: MYSQL_ROOT_PASSWORD
-          value: password
         ports:
         - containerPort: 3306
           name: mysql
+        env:
+          # Use secret in real usage
+        - name: MYSQL_ROOT_PASSWORD
+          value: Dcb6Hn9Qw2MkG0Pi0S2qJf#
         volumeMounts:
         - name: mysql-persistent-storage
           mountPath: /var/lib/mysql
+        - mountPath: /opt/poststart.sh
+          subPath: poststart.sh
+          name: hookvolume
+        - mountPath: /docker-entrypoint-initdb.d/script.sql
+          subPath: script.sql
+          name: hookvolume
       volumes:
       - name: mysql-persistent-storage
         persistentVolumeClaim:
           claimName: mysql-pv-claim
+      - name: hookvolume
+        configMap:
+          name: poststarthook
+          defaultMode: 0755 #please remember to add proper (executable) permissions
