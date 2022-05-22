@@ -16,6 +16,12 @@ export class Person extends Entity {
   name: string;
 
   @property({
+    type: 'string',
+    required: true,
+  })
+  email: string;
+
+  @property({
     type: 'boolean',
     required: true,
   })
