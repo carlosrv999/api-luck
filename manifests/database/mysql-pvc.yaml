@@ -8,7 +8,7 @@ metadata:
   - kubernetes.io/pvc-protection
   labels:
     failure-domain.beta.kubernetes.io/region: la-south-2
-    failure-domain.beta.kubernetes.io/zone: la-south-2b
+    failure-domain.beta.kubernetes.io/zone: la-south-2a
   name: mysql-pv-claim
   namespace: default
 spec:

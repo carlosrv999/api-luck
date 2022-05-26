@@ -51,7 +51,7 @@ spec:
             secretKeyRef:
               key: MYSQL_PASSWD
               name: db-password
-        image: swr.la-south-2.myhuaweicloud.com/demo-huawei/backend:v1.0
+        image: swr.la-south-2.myhuaweicloud.com/demo-huawei/backend:v1.1
         imagePullPolicy: Always
         name: container-0
         resources:
