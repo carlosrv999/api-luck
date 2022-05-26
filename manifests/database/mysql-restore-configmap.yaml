@@ -49,7 +49,7 @@ data:
 
     LOCK TABLES appdb.`Person` WRITE;
     /*!40000 ALTER TABLE appdb.`Person` DISABLE KEYS */;
-    INSERT INTO `Person` VALUES (1,'example','example@example.com',1);
+    INSERT INTO `Person` VALUES (1,'example','example@example.com',0);
     /*!40000 ALTER TABLE appdb.`Person` ENABLE KEYS */;
     UNLOCK TABLES;
     /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
